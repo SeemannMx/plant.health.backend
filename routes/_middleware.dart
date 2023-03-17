@@ -1,7 +1,7 @@
 import 'package:dart_frog/dart_frog.dart';
 import 'package:plant_health_backend/models/models.dart';
 
-final _state = State();
+final _state = State(images: <Image>[]);
 
 Handler middleware(Handler handler) {
   return handler

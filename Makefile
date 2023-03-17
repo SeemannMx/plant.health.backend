@@ -28,3 +28,6 @@ run_test:
 
 analyze:
 	@dart analyze
+
+generate:
+	@dart run build_runner build --delete-conflicting-outputs

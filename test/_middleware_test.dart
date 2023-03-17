@@ -10,7 +10,7 @@ class _MockRequestContext extends Mock implements RequestContext {}
 void main() {
   final context = _MockRequestContext();
   final request = Request.get(Uri.parse('http://localhost/'));
-  var state = State();
+  var state = State(images: <Image>[]);
 
   when(() => context.request).thenReturn(request);
 
