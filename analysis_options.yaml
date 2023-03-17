@@ -1,0 +1,10 @@
+include: package:lints/core.yaml
+
+analyzer:
+  exclude:
+    - build/**
+linter:
+  rules:
+    file_names: false
+    avoid_print: true
+
