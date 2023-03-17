@@ -5,14 +5,14 @@ import 'package:mocktail/mocktail.dart';
 import 'package:plant_health_backend/models/models.dart';
 import 'package:test/test.dart';
 
-import '../../routes/send_image.dart' as route;
+import '../../routes/image.dart' as route;
 
 class _MockRequestContext extends Mock implements RequestContext {}
 
 void main() {
   final context = _MockRequestContext();
 
-  when(() => context.read<Store>()).thenReturn(Store(images: <Image>[]));
+  when(() => context.read<Store>()).thenReturn(Store());
 
   group('GET /', () {
     test('responds with a 200', () {
