@@ -10,14 +10,14 @@ class _MockRequestContext extends Mock implements RequestContext {}
 void main() {
   final context = _MockRequestContext();
   final request = Request.get(Uri.parse('http://localhost/'));
-  var state = State(images: <Image>[]);
+  var state = Store(images: <Image>[]);
 
   when(() => context.request).thenReturn(request);
 
   group('GIVEN a middleware', () {
     final handler = middleware(
       (context) {
-        state = context.read<State>();
+        state = context.read<Store>();
         return Response();
       },
     );
@@ -25,7 +25,7 @@ void main() {
     group('WHEN a request to <send_images> is triggerd', () {
       test('THEN it returns a valid state', () async {
         await handler(context);
-        expect(state.images.length, equals(0));
+        expect(state.images?.length, equals(0));
       });
     });
   });

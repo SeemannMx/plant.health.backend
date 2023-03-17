@@ -1,7 +1,6 @@
 import 'package:dart_frog/dart_frog.dart';
 import 'package:plant_health_backend/models/models.dart';
-
-final _state = State(images: <Image>[]);
+import 'package:plant_health_backend/src/state.dart';
 
 Handler middleware(Handler handler) {
   return handler
@@ -9,6 +8,6 @@ Handler middleware(Handler handler) {
         requestLogger(),
       )
       .use(
-        provider<State>((_) => _state),
+        provider<Store>((_) => state),
       );
 }

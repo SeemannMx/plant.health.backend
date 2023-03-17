@@ -12,7 +12,7 @@ class _MockRequestContext extends Mock implements RequestContext {}
 void main() {
   final context = _MockRequestContext();
 
-  when(() => context.read<State>()).thenReturn(State(images: <Image>[]));
+  when(() => context.read<Store>()).thenReturn(Store(images: <Image>[]));
 
   group('GET /', () {
     test('responds with a 200', () {
