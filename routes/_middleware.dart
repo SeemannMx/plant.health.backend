@@ -2,6 +2,7 @@ import 'package:dart_frog/dart_frog.dart';
 import 'package:plant_health_backend/models/models.dart';
 import 'package:plant_health_backend/state.dart';
 
+/// middleware must be withi routes, otherwise internal server error
 Handler middleware(Handler handler) {
   return handler
       .use(

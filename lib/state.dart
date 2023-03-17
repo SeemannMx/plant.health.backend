@@ -1,6 +1,6 @@
 import 'package:plant_health_backend/models/models.dart';
 
-final state = Store(
+Store state = Store(
   environment: 'not defined',
   images: <Image>[],
 );

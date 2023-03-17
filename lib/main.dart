@@ -1,10 +1,23 @@
-import 'dart:developer';
+import 'package:plant_health_backend/models/image.dart';
+import 'package:plant_health_backend/state.dart';
 
 void main() {
   final env = const String.fromEnvironment('app.stage');
+
   if (env == 'dev') {
-    log("run dev.main");
+    state = state.rebuild(
+      environment: "dev",
+      images: <Image>[],
+    );
+  } else if (env == 'prod') {
+    state = state.rebuild(
+      environment: "prod",
+      images: <Image>[],
+    );
   } else {
-    // throw 'environment not defined app.stage != dev';
+    state = state.rebuild(
+      environment: "undefined",
+      images: <Image>[],
+    );
   }
 }
