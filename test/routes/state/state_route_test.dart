@@ -10,13 +10,16 @@ import '../../../routes/state/index.dart' as route;
 class _MockRequestContext extends Mock implements RequestContext {}
 
 void main() {
-  final context = _MockRequestContext();
-
-  when(() => context.read<Store>()).thenReturn(Store());
-
   group('GET /', () {
     test('responds with a 200', () {
+      final request = Request.get(Uri.parse('http://localhost/'));
+      final context = _MockRequestContext();
+
+      when(() => context.read<Store>()).thenReturn(Store());
+      when(() => context.request).thenReturn(request);
+
       final response = route.onRequest(context);
+
       expect(response.statusCode, equals(HttpStatus.ok));
     });
   });

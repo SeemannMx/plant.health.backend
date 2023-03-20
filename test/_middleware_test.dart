@@ -18,11 +18,11 @@ void main() {
     final handler = middleware(
       (context) {
         state = context.read<Store>();
-        return Response();
+        return Response.json();
       },
     );
 
-    group('WHEN a request to <send_images> is triggerd', () {
+    group('WHEN a request to endpoint is triggered', () {
       test('THEN it returns a valid state', () async {
         await handler(context);
         expect(state.images?.length, equals(0));
