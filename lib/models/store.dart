@@ -11,7 +11,9 @@ class Store extends Equatable {
   final String? environment;
   final List<Image>? images;
 
-  Store({this.environment, this.images});
+  Store({this.environment, this.images}) {
+    print('build store');
+  }
 
   Store rebuild({
     final String? environment,

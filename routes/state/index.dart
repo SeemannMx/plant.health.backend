@@ -8,6 +8,8 @@ import 'package:plant_health_backend/models/models.dart';
 /// @response:
 /// => Store
 Response onRequest(RequestContext context) {
+  print('run onRequest -> ${context.request.uri}');
+
   final state = context.read<Store>();
 
   switch (context.request.method) {
