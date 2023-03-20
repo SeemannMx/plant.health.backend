@@ -17,7 +17,6 @@ build_backend:
 	@dart_frog build
 
 run_backend:
-	@dart_frog build
 	@dart_frog dev
 
 run_pub_get:
