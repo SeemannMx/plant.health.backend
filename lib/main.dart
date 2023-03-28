@@ -9,7 +9,8 @@ Store get state => _state;
 
 void main() {
   print('run main');
-  final env = const String.fromEnvironment('app.stage', defaultValue: 'dev');
+
+  final env = const String.fromEnvironment('app.stage');
 
   if (env == 'dev') {
     _state = _state.rebuild(

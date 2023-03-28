@@ -9,6 +9,10 @@ check_dart:
 	@dart pub global activate dart_frog_cli
 	@echo "✅ dart"
 
+check_tio:
+	@tio --version
+	@echo "✅ tio"
+
 check_dart_frog:
 	@dart_frog --version
 	@echo "✅ dart_frog"
