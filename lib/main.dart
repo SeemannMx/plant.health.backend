@@ -1,4 +1,5 @@
 import 'package:plant_health_backend/models/models.dart';
+import 'package:web_socket_channel/web_socket_channel.dart';
 
 Store _state = Store(
   environment: 'not defined',
@@ -11,6 +12,9 @@ void main() {
   print('run main');
   final env = const String.fromEnvironment('app.stage', defaultValue: 'dev');
 
+  final uri = Uri.parse('ws://localhost:8080/ws');
+  final channel = WebSocketChannel.connect(uri);
+
   if (env == 'dev') {
     _state = _state.rebuild(
       environment: "dev",
@@ -22,4 +26,6 @@ void main() {
       images: <Image>[],
     );
   }
+
+  channel.sink.add('hello');
 }
