@@ -10,8 +10,14 @@
 [frog_badge]: https://img.shields.io/endpoint?url=https://tinyurl.com/dartfrog-badge
 [frog_link]: https://dartfrog.vgv.dev
 
+### Run backend
 
+    $ make run_backend
 
+### Get esp logging
+    
+    $ tio /dev/tty.usbserial-14310
 
+### Run curl to backend
 
-
+    $ curl http://localhost:8080/state
